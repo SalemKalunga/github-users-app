@@ -1,7 +1,7 @@
 import "./main.styles.scss";
 const Main = () => {
   return (
-    <main className="main">
+    <main>
       <h1>hello main</h1>
     </main>
   );

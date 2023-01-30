@@ -62,3 +62,10 @@ header{
     }
 
 }
+main{
+    position: relative;
+    min-height: 80vh;
+    width: 100%;
+    font-size: 1.2rem;
+    @include responsivePadding();
+}
