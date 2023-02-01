@@ -1,0 +1,72 @@
+@mixin mediaQuerty($breakpoint){
+    @if($breakpoint==tablette){
+       @media screen and (max-width:850px) {
+        @content;
+       }
+    }
+    @if($breakpoint==phone){
+       @media screen and (max-width:550px) {
+        @content;
+       }
+    }
+}
+$transparent_black:rgba(0, 0, 0, 0.463);
+$white:#fff;
+$blue:royalblue;
+@mixin flexMeOut($direction,$justifyContent,$alginItems,$gap){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justifyContent;
+    align-items: $alginItems;
+    gap: $gap;
+}
+.user-cart{
+    position: relative;
+    border: 1px solid;
+    img{
+        height: 100%;
+        width: 100%;
+    }
+    .dark-overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: $transparent_black;
+        padding: 1rem;
+        color: $white;
+        @include flexMeOut(column,flex-end ,flex-start ,1rem );
+        p{
+            font-size: 2rem;
+            font-weight: bold;
+            @include mediaQuerty(phone){
+                font-size: 1.2rem;
+            }
+        }
+        button{
+            padding: .5rem 1rem;
+            background-color: transparent;
+            color: $white;
+            border: 1px solid ;
+            &:hover{
+                background-color: $transparent_black;
+                color: $blue;
+            }
+            &:active{
+                border-color: $white;
+                color: $blue;
+            }
+        }
+        transition: all .1s ease-in-out;
+        opacity: 0;   
+        pointer-events: none;     
+    }
+    &:hover{
+        .dark-overlay{
+            // display: flex;
+            opacity: 1;
+            pointer-events: fill;
+        }
+    }
+}

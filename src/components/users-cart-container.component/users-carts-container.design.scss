@@ -1,0 +1,25 @@
+@mixin mediaQuerty($breakpoint){
+    @if($breakpoint==tablette){
+       @media screen and (max-width:850px) {
+        @content;
+       }
+    }
+    @if($breakpoint==phone){
+       @media screen and (max-width:550px) {
+        @content;
+       }
+    }
+}
+.users-carts-container{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding: 1rem;
+    gap: 1rem;
+    @include mediaQuerty(tablette){
+        grid-template-columns: repeat(3,1fr);
+    }
+    @include mediaQuerty(phone){
+        grid-template-columns: repeat(2,1fr);
+    }
+}

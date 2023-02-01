@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./routes/home.component/home.component";
 import Login from "./routes/login.component/login.component";
 import SignUp from "./routes/sign-up.component/sign-up.component";
+
 function App() {
   return (
     <div className="App">

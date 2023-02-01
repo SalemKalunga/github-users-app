@@ -1,0 +1,10 @@
+.search-box{
+    padding: 1rem ;
+    margin: 1rem;
+    border: 1px solid lightgray;
+    outline: none;
+    &:focus{
+        border: 1px solid royalblue;
+        outline: 2px solid royalblue;
+    }
+}
