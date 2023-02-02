@@ -1,0 +1,19 @@
+@import '../../assets/_variables';
+.form-container{
+    position: relative;
+    min-height: 60vh;
+    width: 100%;
+    @include flexMeOut(column,center,center,1rem);
+    .google-button{
+        padding:.5rem 1rem;
+        background-color: $blue;
+        color: $white;
+        border: 2px solid $blue;
+        cursor: pointer;
+        transition: all .1s ease-in-out;
+        &:hover{
+            background-color: rgb(37, 75, 188);
+
+        }
+    }
+}

@@ -1,0 +1,30 @@
+@mixin mediaQuerty($breakpoint){
+    @if($breakpoint==tablette){
+       @media screen and (max-width:850px) {
+        @content;
+       }
+    }
+    @if($breakpoint==phone){
+       @media screen and (max-width:550px) {
+        @content;
+       }
+    }
+}
+$transparent_black:rgba(0, 0, 0, 0.463);
+$white:#fff;
+$blue:royalblue;
+@mixin flexMeOut($direction,$justifyContent,$alginItems,$gap){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justifyContent;
+    align-items: $alginItems;
+    gap: $gap;
+}
+.primary_heading{
+    font-size: 2rem;
+    color: #333;
+    text-transform: capitalize;
+    letter-spacing: .5rem;
+    padding: 1rem;
+    border-bottom: 1px solid;
+}
