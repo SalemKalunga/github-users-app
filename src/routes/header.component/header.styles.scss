@@ -50,9 +50,10 @@ header{
             ul{
                 list-style: none;
                 @include flexMeOut(column,center ,center ,1rem );
-                a{
+                a,span{
                     text-decoration: none;
                     color: royalblue;
+                    cursor: pointer;
                     &:hover{
                         color: rgb(30, 51, 114);
                     }

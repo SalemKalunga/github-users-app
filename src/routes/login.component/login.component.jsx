@@ -6,10 +6,14 @@ import {
   signInUserWithEmailAndPassword,
 } from "../../firebase.tools/firebase.tools";
 import "./login.styles.scss";
+import { useContext } from "react";
+import { UserContext } from "../../contexts/user.context";
+
 const Login = () => {
   const getGoogleUser = async () => {
     const { user } = await goSignInWithGooglePopup();
     createUserDocumentFromAuthUser(user);
+    setUser(user);
   };
   const inputChangeHandler = (event) => {
     const { name, value } = event.target;
@@ -20,7 +24,7 @@ const Login = () => {
     email: "",
     password: "",
   };
-
+  const { setUser, userLogged } = useContext(UserContext);
   const [formFieldValues, setFormFieldValues] = useState(defaultInputValues);
   const { email, password } = formFieldValues;
 
@@ -30,7 +34,8 @@ const Login = () => {
   const goSignInWithEmailAndPass = async (event) => {
     event.preventDefault();
     try {
-      await signInUserWithEmailAndPassword(email, password);
+      const { user } = await signInUserWithEmailAndPassword(email, password);
+      setUser(user);
       alert("Sign In Successfully!☝️😊");
       emptyInputs();
     } catch (error) {
@@ -43,7 +48,9 @@ const Login = () => {
           break;
         default:
           console.log(error.code);
+        // break;
       }
+      console.log(error.code);
     }
   };
   return (

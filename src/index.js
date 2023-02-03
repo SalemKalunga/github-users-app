@@ -5,12 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
 import { GithubUsersContextProvider } from "./contexts/github-users.context";
+import { UserContextProvider } from "./contexts/user.context";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // <React.StrictMode>
   <BrowserRouter>
     <GithubUsersContextProvider>
-      <App />
+      <UserContextProvider>
+        <App />
+      </UserContextProvider>
     </GithubUsersContextProvider>
   </BrowserRouter>
   //</React.StrictMode>
