@@ -7,11 +7,10 @@ import { UserContext } from "../../contexts/user.context";
 import { useContext } from "react";
 import { SignUserOut } from "../../firebase.tools/firebase.tools";
 const Header = () => {
-  const { userLogged, setUser } = useContext(UserContext);
+  const { userLogged } = useContext(UserContext);
 
   const logOut = async () => {
     await SignUserOut();
-    setUser(null);
   };
   return (
     <Fragment>

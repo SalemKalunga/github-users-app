@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   createUserDocumentFromAuthUser,
@@ -6,14 +6,11 @@ import {
   goSignInWithGooglePopup,
 } from "../../firebase.tools/firebase.tools";
 import "./sign-up.styles.scss";
-import { UserContext } from "../../contexts/user.context";
 
 const SignUp = () => {
   const getGoogleUser = async () => {
-    const { user } = await goSignInWithGooglePopup();
-    createUserDocumentFromAuthUser(user);
+    await goSignInWithGooglePopup();
   };
-  const { userLogged, setUser } = useContext(UserContext);
   const defaultInputValues = {
     displayName: "",
     email: "",
@@ -43,7 +40,6 @@ const SignUp = () => {
         email,
         password
       );
-      setUser(user);
       await createUserDocumentFromAuthUser(user, {
         displayName,
       });
