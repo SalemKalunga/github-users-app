@@ -1,4 +1,4 @@
-@mixin mediaQuerty($breakpoint){
+@mixin mediaQuery($breakpoint){
     @if($breakpoint==tablette){
        @media screen and (max-width:850px) {
         @content;
@@ -13,6 +13,7 @@
 $transparent_black:rgba(0, 0, 0, 0.463);
 $white:#fff;
 $blue:royalblue;
+$darkenBlue:rgb(37, 75, 188);
 @mixin flexMeOut($direction,$justifyContent,$alginItems,$gap){
     display: flex;
     flex-direction: $direction;
@@ -21,10 +22,8 @@ $blue:royalblue;
     gap: $gap;
 }
 .primary_heading{
-    font-size: 2rem;
+    font-size: 1.4rem;
     color: #333;
     text-transform: capitalize;
     letter-spacing: .5rem;
-    padding: 1rem;
-    border-bottom: 1px solid;
 }

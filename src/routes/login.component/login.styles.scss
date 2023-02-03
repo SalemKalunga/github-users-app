@@ -4,6 +4,10 @@
     min-height: 60vh;
     width: 100%;
     @include flexMeOut(column,center,center,1rem);
+    button{
+        padding: .5rem 2rem;
+        // border-radius: .2rem;
+    }
     .google-button{
         padding:.5rem 1rem;
         background-color: $blue;
@@ -12,8 +16,36 @@
         cursor: pointer;
         transition: all .1s ease-in-out;
         &:hover{
-            background-color: rgb(37, 75, 188);
-
+            background-color: $darkenBlue;
+        }
+    }
+    form{
+        position: relative;
+        @include flexMeOut(column,center,center,1rem);
+        // border: 1px solid red;
+        width: 40%;
+        @include mediaQuery(tablette){
+            width: 60%;
+        } 
+        @include mediaQuery(tablette){
+            width: 80%;
+        } 
+        input{
+            padding: 1rem 2rem;
+            width: 100%;
+        }
+        button{
+            width: 100%;
+        }
+        p{
+            font-size: 1.1rem;
+        }
+        a{
+            color: $blue;
+            text-decoration: none;
+            &:hover{
+                color: $darkenBlue;
+            }
         }
     }
 }
