@@ -3,7 +3,7 @@ import "./home.styles.scss";
 const Home = () => {
   return (
     <div>
-      <h1>Home component</h1>
+      <h2>Git hub users</h2>
       <br />
       <UsersCartContainer />
     </div>
